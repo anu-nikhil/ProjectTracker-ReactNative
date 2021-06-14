@@ -1,0 +1,27 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '13.0'
+
+target 'ProjectTracker' do
+  config = use_native_modules!
+# add pods for desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'ProjectTrackerTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  
+end
+
+target 'ProjectTracker-tvOS' do
+  # Pods for ProjectTracker-tvOS
+
+  target 'ProjectTracker-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end
